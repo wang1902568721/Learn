@@ -24,10 +24,13 @@
     <ClInclude Include="targetver.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Header.h">
+    <ClInclude Include="errlog.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="logfunction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="timeoper.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -35,7 +38,13 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="CallDll.cpp">
+    <ClCompile Include="LogFunction.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="errlog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="timeoper.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
