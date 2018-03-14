@@ -22,6 +22,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CallDll", "CallDll\CallDll.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LogFunction", "LogFunction\LogFunction.vcxproj", "{46E06CBA-64C6-473D-9C25-4CD53AD01A28}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PtrAndStruct", "PtrAndStruct\PtrAndStruct.vcxproj", "{AF20E22C-C474-4CE8-A50E-445C0528D9D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -94,6 +96,14 @@ Global
 		{46E06CBA-64C6-473D-9C25-4CD53AD01A28}.Release|x64.Build.0 = Release|x64
 		{46E06CBA-64C6-473D-9C25-4CD53AD01A28}.Release|x86.ActiveCfg = Release|Win32
 		{46E06CBA-64C6-473D-9C25-4CD53AD01A28}.Release|x86.Build.0 = Release|Win32
+		{AF20E22C-C474-4CE8-A50E-445C0528D9D5}.Debug|x64.ActiveCfg = Debug|x64
+		{AF20E22C-C474-4CE8-A50E-445C0528D9D5}.Debug|x64.Build.0 = Debug|x64
+		{AF20E22C-C474-4CE8-A50E-445C0528D9D5}.Debug|x86.ActiveCfg = Debug|Win32
+		{AF20E22C-C474-4CE8-A50E-445C0528D9D5}.Debug|x86.Build.0 = Debug|Win32
+		{AF20E22C-C474-4CE8-A50E-445C0528D9D5}.Release|x64.ActiveCfg = Release|x64
+		{AF20E22C-C474-4CE8-A50E-445C0528D9D5}.Release|x64.Build.0 = Release|x64
+		{AF20E22C-C474-4CE8-A50E-445C0528D9D5}.Release|x86.ActiveCfg = Release|Win32
+		{AF20E22C-C474-4CE8-A50E-445C0528D9D5}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
