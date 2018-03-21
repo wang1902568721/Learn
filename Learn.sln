@@ -26,6 +26,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PtrAndStruct", "PtrAndStruc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExceptionHandler", "ExceptionHandler\ExceptionHandler.vcxproj", "{238980A7-5391-4312-AFD7-D7C19F2EEA45}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AboutDlg", "AboutDlg\AboutDlg.vcxproj", "{634AE23F-90E9-426E-AF6A-26190CC2C948}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -114,6 +116,14 @@ Global
 		{238980A7-5391-4312-AFD7-D7C19F2EEA45}.Release|x64.Build.0 = Release|x64
 		{238980A7-5391-4312-AFD7-D7C19F2EEA45}.Release|x86.ActiveCfg = Release|Win32
 		{238980A7-5391-4312-AFD7-D7C19F2EEA45}.Release|x86.Build.0 = Release|Win32
+		{634AE23F-90E9-426E-AF6A-26190CC2C948}.Debug|x64.ActiveCfg = Debug|x64
+		{634AE23F-90E9-426E-AF6A-26190CC2C948}.Debug|x64.Build.0 = Debug|x64
+		{634AE23F-90E9-426E-AF6A-26190CC2C948}.Debug|x86.ActiveCfg = Debug|Win32
+		{634AE23F-90E9-426E-AF6A-26190CC2C948}.Debug|x86.Build.0 = Debug|Win32
+		{634AE23F-90E9-426E-AF6A-26190CC2C948}.Release|x64.ActiveCfg = Release|x64
+		{634AE23F-90E9-426E-AF6A-26190CC2C948}.Release|x64.Build.0 = Release|x64
+		{634AE23F-90E9-426E-AF6A-26190CC2C948}.Release|x86.ActiveCfg = Release|Win32
+		{634AE23F-90E9-426E-AF6A-26190CC2C948}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
