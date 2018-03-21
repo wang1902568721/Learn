@@ -3,7 +3,7 @@
 //
 
 #pragma once
-
+#include "SubDlg.h"
 
 // CAboutDlgDlg ¶Ô»°¿ò
 class CAboutDlgDlg : public CDialogEx
@@ -30,4 +30,8 @@ protected:
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
+private:
+	CSubDlg *subDlg;
+public:
+	afx_msg void OnBnClickedBtnShowsubdlg();
 };

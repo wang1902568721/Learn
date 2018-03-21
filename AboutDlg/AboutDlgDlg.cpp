@@ -6,6 +6,7 @@
 #include "AboutDlg.h"
 #include "AboutDlgDlg.h"
 #include "afxdialogex.h"
+#include "ExceptionHandler.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -18,8 +19,10 @@
 
 CAboutDlgDlg::CAboutDlgDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(IDD_ABOUTDLG_DIALOG, pParent)
+	, subDlg(NULL)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
+	subDlg = new CSubDlg(NULL);
 }
 
 void CAboutDlgDlg::DoDataExchange(CDataExchange* pDX)
@@ -30,6 +33,7 @@ void CAboutDlgDlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CAboutDlgDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_BTN_SHOWSUBDLG, &CAboutDlgDlg::OnBnClickedBtnShowsubdlg)
 END_MESSAGE_MAP()
 
 
@@ -45,7 +49,9 @@ BOOL CAboutDlgDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO: 在此添加额外的初始化代码
+	subDlg->Create(IDD_SUBDLG, this);
 
+	InitMinDump();
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
 
@@ -85,3 +91,11 @@ HCURSOR CAboutDlgDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+void CAboutDlgDlg::OnBnClickedBtnShowsubdlg()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	subDlg->ShowWindow(SW_SHOW);
+	subDlg->BringWindowToTop();
+}
