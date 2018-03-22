@@ -81,7 +81,7 @@ void CreateMiniDump(PEXCEPTION_POINTERS pep, LPCTSTR strFileName)
 LONG __stdcall MyUnhandledExceptionFilter(PEXCEPTION_POINTERS pExceptionInfo)
 {
 	CreateMiniDump(pExceptionInfo, "core.dmp");
-	MessageBox(NULL, "Core dump", "Core dump", MB_OK);
+	MessageBox(NULL, "啊哦！出错了！请将错误文件和日志提交给开发人员！", "Core dump", MB_OK);
 	return EXCEPTION_EXECUTE_HANDLER;
 }
 

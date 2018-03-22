@@ -5,6 +5,7 @@
 #include "AboutDlg.h"
 #include "SubDlg.h"
 #include "afxdialogex.h"
+#include "../DllForTest/Header.h"
 
 
 // CSubDlg 对话框
@@ -46,6 +47,7 @@ void CSubDlg::OnBnClickedOk()
 void CSubDlg::OnBnClickedBtnTest()
 {
 	// TODO: 在此添加控件通知处理程序代码
-	int *p = NULL;
-	*(p + 1) = 500;
+	//int *p = NULL;
+	//*(p + 1) = 500;
+	Max(12, 14);
 }
