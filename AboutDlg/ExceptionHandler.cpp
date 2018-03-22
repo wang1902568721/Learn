@@ -23,7 +23,9 @@ BOOL IsDataSectionNeeded(const WCHAR* pModuleName)
 	_wsplitpath(pModuleName, NULL, NULL, szFileName, NULL);
 
 	if (wcsicmp(szFileName, L"ntdll") == 0)
+	{
 		return TRUE;
+	}
 
 	return FALSE;
 }
@@ -31,7 +33,9 @@ BOOL IsDataSectionNeeded(const WCHAR* pModuleName)
 BOOL CALLBACK MiniDumpCallback(PVOID pParam,const PMINIDUMP_CALLBACK_INPUT pInput,PMINIDUMP_CALLBACK_OUTPUT pOutput)
 {
 	if (pInput == 0 || pOutput == 0)
+	{
 		return FALSE;
+	}
 
 	switch (pInput->CallbackType)
 	{
@@ -80,8 +84,8 @@ void CreateMiniDump(PEXCEPTION_POINTERS pep, LPCTSTR strFileName)
 
 LONG __stdcall MyUnhandledExceptionFilter(PEXCEPTION_POINTERS pExceptionInfo)
 {
-	CreateMiniDump(pExceptionInfo, "core.dmp");
-	MessageBox(NULL, "啊哦！出错了！请将错误文件和日志提交给开发人员！", "Core dump", MB_OK);
+	CreateMiniDump(pExceptionInfo, "D:\\log\\core.dmp");
+	MessageBox(AfxGetMainWnd()->m_hWnd, "啊哦！出错了！请将错误文件和日志提交给开发人员！", "Core dump", MB_OK);
 	return EXCEPTION_EXECUTE_HANDLER;
 }
 
