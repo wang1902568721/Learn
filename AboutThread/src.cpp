@@ -4,22 +4,29 @@ using namespace std;
 
 DWORD WINAPI ThreadFunc(LPVOID lpParameter)
 {
-	cout << "Thread func 1" << endl;
-	Sleep(500);
-	cout << "Thread func 2" << endl;
+	HANDLE hParent = (HANDLE)lpParameter;
+	HANDLE hMine = GetCurrentThread();
+
+	if (hParent == hMine)
+	{
+		cout << "equal" << endl;
+	}
+	else
+	{
+		cout << "not equal"<< endl;
+	}
 	return 0;
 }
 
 int main()
 {
-	int i = 10;
 	DWORD dwThreadID;
 	HANDLE hThread;
-	hThread = CreateThread(NULL, 0, ThreadFunc,&i , 0, &dwThreadID);
-	cout << "Main Thread" << endl;
-	TerminateThread(hThread, 0);
-	Sleep(100);
-	hThread = CreateThread(NULL, 0, ThreadFunc, &i, 0, &dwThreadID);
+	HANDLE hThreadParent;
+
+	DuplicateHandle(GetCurrentProcess(), GetCurrentThread(), GetCurrentProcess(), &hThreadParent, 0, FALSE, DUPLICATE_SAME_ACCESS);
+	hThread = CreateThread(NULL, 0, ThreadFunc,(PVOID)hThreadParent , 0, &dwThreadID);
+
 	system("pause");
 	return 0;
 }

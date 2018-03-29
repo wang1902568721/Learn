@@ -39,6 +39,7 @@ BOOL CALLBACK MiniDumpCallback(PVOID pParam,const PMINIDUMP_CALLBACK_INPUT pInpu
 
 	switch (pInput->CallbackType)
 	{
+		//ÓÐÎÊÌâ
 	case ModuleCallback:
 		if (pOutput->ModuleWriteFlags & ModuleWriteDataSeg)
 		{
@@ -46,9 +47,7 @@ BOOL CALLBACK MiniDumpCallback(PVOID pParam,const PMINIDUMP_CALLBACK_INPUT pInpu
 			{
 				pOutput->ModuleWriteFlags &= (~ModuleWriteDataSeg);
 			}
-
 		}
-
 	case IncludeModuleCallback:
 	case IncludeThreadCallback:
 	case ThreadCallback:
