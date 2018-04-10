@@ -2,6 +2,34 @@
 #include <iostream>
 using namespace std;
 
+__int64 FileTimeToQuadWord(PFILETIME pft)
+{
+	return (Int64ShllMod32(pft->dwHighDateTime,32)|pft->dwLowDateTime);
+}
+
+void PerformLongOperation()
+{
+	FILETIME ftKernelTimeStart, ftKernelTimeEnd;
+	FILETIME ftUserTimeStart, ftUserTimeEnd;
+	FILETIME ftDummy;
+
+	__int64 qwKernelTimeElapsed, qwUserTimeElapsed, qwTotalTimeElapsed;
+
+	GetThreadTimes(GetCurrentThread(), &ftDummy, &ftDummy, &ftKernelTimeStart, &ftUserTimeStart);
+
+	//perform complex algorithm here
+
+	//Get ending times
+	GetThreadTimes(GetCurrentThread(), &ftDummy, &ftDummy, &ftKernelTimeEnd, &ftUserTimeEnd);
+
+	qwKernelTimeElapsed = FileTimeToQuadWord(&ftKernelTimeEnd) - FileTimeToQuadWord(&ftKernelTimeStart);
+
+	qwUserTimeElapsed = FileTimeToQuadWord(&ftUserTimeEnd) - FileTimeToQuadWord(&ftUserTimeStart);
+
+	qwTotalTimeElapsed = qwKernelTimeElapsed + qwUserTimeElapsed;
+
+}
+
 DWORD WINAPI ThreadFunc(LPVOID lpParameter)
 {
 	HANDLE hParent = (HANDLE)lpParameter;
