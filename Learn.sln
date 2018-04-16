@@ -36,6 +36,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LearnProcess", "LearnProces
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LearnJob", "LearnJob\LearnJob.vcxproj", "{2D4670AF-B672-46ED-B33C-0D08A122F48F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TypeConvert", "TypeConvert\TypeConvert.vcxproj", "{8491C8D9-36D6-4D17-854D-F58C666DD342}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -164,6 +166,14 @@ Global
 		{2D4670AF-B672-46ED-B33C-0D08A122F48F}.Release|x64.Build.0 = Release|x64
 		{2D4670AF-B672-46ED-B33C-0D08A122F48F}.Release|x86.ActiveCfg = Release|Win32
 		{2D4670AF-B672-46ED-B33C-0D08A122F48F}.Release|x86.Build.0 = Release|Win32
+		{8491C8D9-36D6-4D17-854D-F58C666DD342}.Debug|x64.ActiveCfg = Debug|x64
+		{8491C8D9-36D6-4D17-854D-F58C666DD342}.Debug|x64.Build.0 = Debug|x64
+		{8491C8D9-36D6-4D17-854D-F58C666DD342}.Debug|x86.ActiveCfg = Debug|Win32
+		{8491C8D9-36D6-4D17-854D-F58C666DD342}.Debug|x86.Build.0 = Debug|Win32
+		{8491C8D9-36D6-4D17-854D-F58C666DD342}.Release|x64.ActiveCfg = Release|x64
+		{8491C8D9-36D6-4D17-854D-F58C666DD342}.Release|x64.Build.0 = Release|x64
+		{8491C8D9-36D6-4D17-854D-F58C666DD342}.Release|x86.ActiveCfg = Release|Win32
+		{8491C8D9-36D6-4D17-854D-F58C666DD342}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
