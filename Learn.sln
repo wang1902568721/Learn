@@ -42,6 +42,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AboutPointer", "AboutPointe
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AboutVar", "AboutVar\AboutVar.vcxproj", "{5A4926F3-14A0-4910-A954-90DD1C78A6DE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ThreadSync", "ThreadSync\ThreadSync.vcxproj", "{C97C8DF2-6CA1-47F0-A2BB-F22C2470A236}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -194,6 +196,14 @@ Global
 		{5A4926F3-14A0-4910-A954-90DD1C78A6DE}.Release|x64.Build.0 = Release|x64
 		{5A4926F3-14A0-4910-A954-90DD1C78A6DE}.Release|x86.ActiveCfg = Release|Win32
 		{5A4926F3-14A0-4910-A954-90DD1C78A6DE}.Release|x86.Build.0 = Release|Win32
+		{C97C8DF2-6CA1-47F0-A2BB-F22C2470A236}.Debug|x64.ActiveCfg = Debug|x64
+		{C97C8DF2-6CA1-47F0-A2BB-F22C2470A236}.Debug|x64.Build.0 = Debug|x64
+		{C97C8DF2-6CA1-47F0-A2BB-F22C2470A236}.Debug|x86.ActiveCfg = Debug|Win32
+		{C97C8DF2-6CA1-47F0-A2BB-F22C2470A236}.Debug|x86.Build.0 = Debug|Win32
+		{C97C8DF2-6CA1-47F0-A2BB-F22C2470A236}.Release|x64.ActiveCfg = Release|x64
+		{C97C8DF2-6CA1-47F0-A2BB-F22C2470A236}.Release|x64.Build.0 = Release|x64
+		{C97C8DF2-6CA1-47F0-A2BB-F22C2470A236}.Release|x86.ActiveCfg = Release|Win32
+		{C97C8DF2-6CA1-47F0-A2BB-F22C2470A236}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
