@@ -4,6 +4,7 @@ using namespace std;
 
 HANDLE hEvent = INVALID_HANDLE_VALUE;
 HANDLE hMutex = INVALID_HANDLE_VALUE;
+HANDLE hTimer = INVALID_HANDLE_VALUE;
 
 DWORD WINAPI EventFunc1(LPVOID lpParam)
 {
@@ -74,9 +75,60 @@ int TestMutex()
 	return 0;
 }
 
+VOID CALLBACK TimerAPCProc(LPVOID lpArgToCompletionRoutine, DWORD dwTimerLowValue,DWORD dwTimerHighValue)
+{
+	static int iIndex = 0;
+	while (iIndex < 10)
+	{
+		cout << "TimerAPCProc was running" << endl;
+		iIndex++;
+		SleepEx(INFINITE, TRUE);
+	}
+	CancelWaitableTimer(hTimer);
+	cout << "TimerAPCProc exit" << endl;
+	
+}
+
+DWORD WINAPI TimerProc(LPVOID lpParam)
+{
+	static int iCount = 0;
+	do
+	{
+		DWORD dwWaitResult = WaitForSingleObject(hTimer, INFINITE);
+		if (WAIT_OBJECT_0 == dwWaitResult)
+		{
+			cout << "TimerProc got the signal..." << endl;
+			iCount++;
+		}
+	}while(iCount < 10);
+	
+	CancelWaitableTimer(hTimer);
+	cout << "Thread exit..." << endl;
+
+	return 0;
+}
+int TestWaitableTimer()
+{
+	LARGE_INTEGER lDueTime;
+	lDueTime.QuadPart = -100000000LL;
+
+	HANDLE hThread = CreateThread(NULL, 0, TimerProc, NULL, CREATE_SUSPENDED, NULL);
+	hTimer = CreateWaitableTimer(NULL, FALSE, NULL);
+	//设置十秒后触发
+	SetWaitableTimer(hTimer, &lDueTime, 1*1000, TimerAPCProc, NULL, FALSE);
+	ResumeThread(hThread);
+
+	//Sleep(20 * 1000);
+	SleepEx(INFINITE,TRUE);
+	system("pause");
+	CloseHandle(hThread);
+	CloseHandle(hTimer);
+
+	return 0;
+}
 int main()
 {
-	TestMutex();
+	TestWaitableTimer();
 	system("pause");
 	return 0;
 }
