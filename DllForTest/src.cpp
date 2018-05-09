@@ -10,9 +10,7 @@
 //}
 int Max(int input1, int input2)
 {
-	//func();w
-	int *p = NULL;
-	*(p + 1) = 500;
+	//func();
 	ErrorLog(ERROR, "In function Max[%d][%d]", 1, 2);
 	return (input1 > input2 ? input1 : input2);
 }
