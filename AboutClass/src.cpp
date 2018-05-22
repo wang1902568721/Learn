@@ -7,9 +7,12 @@ public:
 	CTest();
 private:
 	~CTest();
-private:
+protected:
 	int iNum;
+	static int iStaticNum;
 };
+
+int CTest::iStaticNum = 10;
 
 CTest::CTest()
 {
@@ -20,10 +23,11 @@ CTest::~CTest()
 {
 	cout << "deconstruct" << endl;
 }
+
 int main()
 {
 	CTest *pTest = new CTest;
-
+	//cout << CTest::iStaticNum<< endl;
 	cin.get();
 	return 0;
 }
