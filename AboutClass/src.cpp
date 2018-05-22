@@ -12,6 +12,16 @@ protected:
 	static int iStaticNum;
 };
 
+class C1Function
+{
+public:
+	void Func1();
+};
+
+void C1Function::Func1()
+{
+}
+
 int CTest::iStaticNum = 10;
 
 CTest::CTest()
@@ -26,8 +36,11 @@ CTest::~CTest()
 
 int main()
 {
-	CTest *pTest = new CTest;
+	//CTest *pTest = new CTest;
 	//cout << CTest::iStaticNum<< endl;
+
+	C1Function cobj;
+	cout << sizeof(cobj) << endl;
 	cin.get();
 	return 0;
 }
