@@ -34,13 +34,25 @@ CTest::~CTest()
 	cout << "deconstruct" << endl;
 }
 
+class Construct
+{
+public:
+	Construct();
+	Construct(Construct &src);
+};
+
+Construct::Construct()
+{
+	cout << "Construct" << endl;
+}
+Construct::Construct(Construct &src)
+{
+	cout << "copy Construct" << endl;
+}
 int main()
 {
-	//CTest *pTest = new CTest;
-	//cout << CTest::iStaticNum<< endl;
-
-	C1Function cobj;
-	cout << sizeof(cobj) << endl;
-	cin.get();
+	Construct c1;
+	Construct C2 = c1;
+	system("pause");
 	return 0;
 }

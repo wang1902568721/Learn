@@ -79,11 +79,17 @@ private:
 };
 int main()
 {
+	//int *p = new int(10);
+	//int *p2 = new int(20);
+
+	//cout << p2 - p << endl;
 	int *p = new int[10];
 	delete[] p;
 
 	A  *pA = new A[5];
-	delete[] pA;
+	delete (pA - 1);
+	//cout <<  << endl;
+	//delete[] pA;
 	system("pause");
 	return 0;
 }
