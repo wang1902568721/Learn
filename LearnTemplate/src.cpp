@@ -29,11 +29,17 @@ void func1()
 	lEndTime = GetTickCount();
 	cout << "front" << lEndTime - lStartTime << endl;
 }
+
+template<int inst> int func2()
+{
+	cout << inst << endl;
+	return 0;
+}
 int main()
 {
 	int i = 5;
 	int *p = &i;
-	func1();
+	func2<120>();
 	system("pause");
 	return 0;
 }

@@ -63,33 +63,67 @@
 //	return 0;
 //}
 
-#include <iostream>
+//#include <iostream>
+//using namespace std;
+//
+//class A
+//{
+//public:
+//	~A()
+//	{
+//		//
+//		cout << "A destructor" << endl;
+//	}
+//private:
+//	int iNum;
+//};
+//
+//
+//int main()
+//{
+//	//int *p = new int(10);
+//	//int *p2 = new int(20);
+//
+//	//cout << p2 - p << endl;
+//	int *p = new int[10];
+//	delete[] p;
+//
+//	A  *pA = new A[5];
+//	delete (pA - 1);
+//	//cout <<  << endl;
+//	//delete[] pA;
+//	system("pause");
+//	return 0;
+//}
+
+// new_set_new_handler.cpp
+// compile with: /EHsc
+#include<new>
+#include<iostream>
 using namespace std;
 
-class A
+void __cdecl newhandler()
 {
-public:
-	~A()
-	{
-		//
-		cout << "A destructor" << endl;
-	}
-private:
-	int iNum;
-};
+	cout << "The new_handler is called:" << endl;
+	throw bad_alloc();
+	return;
+}
+
 int main()
 {
-	//int *p = new int(10);
-	//int *p2 = new int(20);
+	set_new_handler(newhandler);
+	try
+	{
+		while (1)
+		{
+			new int[5000000];
+			cout << "Allocating 5000000 ints." << endl;
+		}
+	}
+	catch (exception e)
+	{
+		cout << e.what() << endl;
+	}
 
-	//cout << p2 - p << endl;
-	int *p = new int[10];
-	delete[] p;
-
-	A  *pA = new A[5];
-	delete (pA - 1);
-	//cout <<  << endl;
-	//delete[] pA;
-	system("pause");
 	return 0;
 }
