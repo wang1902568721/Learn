@@ -1,6 +1,7 @@
 #include <iostream>
 #include <Windows.h>
 using namespace std;
+#include <stdio.h>
 
 template<typename T> T func(T i)
 {
@@ -10,6 +11,7 @@ template<typename T> T func(T i)
 	return 0;
 }
 
+//测试for循环前置和后置++的效率
 void func1()
 {
 	int iLoop = 0;
@@ -35,11 +37,36 @@ template<int inst> int func2()
 	cout << inst << endl;
 	return 0;
 }
+
+//奇怪的模板写法
+template<int inst>class TestStaticMember
+{
+public:
+	static void Call();
+	//{
+	//	cout << inst << endl;
+	//}
+};
+
+template<int inst> void TestStaticMember<inst>::Call()
+{
+	cout << inst << endl;
+}
+
+union obj
+{
+	union obj* list;
+	char s[1];
+};
+void testunion()
+{
+	obj * volatile * my_list;
+	//printf("%p\n",&my_list);
+}
 int main()
 {
-	int i = 5;
-	int *p = &i;
-	func2<120>();
+	TestStaticMember<12> mem;
+	mem.Call();
 	system("pause");
 	return 0;
 }
