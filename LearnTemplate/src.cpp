@@ -63,10 +63,17 @@ void testunion()
 	obj * volatile * my_list;
 	//printf("%p\n",&my_list);
 }
+
+template<typename T=int>void TestDefaultValue()
+{
+	//T num = 0;
+	cout <<typeid(T).name()<< endl;
+	//cout << typeid(T2).name() << endl;
+}
+
 int main()
 {
-	TestStaticMember<12> mem;
-	mem.Call();
+	TestDefaultValue<double>();
 	system("pause");
 	return 0;
 }
