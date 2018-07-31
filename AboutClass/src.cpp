@@ -49,6 +49,20 @@ Construct::Construct(Construct &src)
 {
 	cout << "copy Construct" << endl;
 }
+
+class Base
+{
+private:
+	int k;
+};
+class InitList : public Base
+{
+public:
+	int i;
+	int j;
+public:
+	InitList(InitList&& x) : Base{x.i},j(x.j){}
+};
 int main()
 {
 	Construct c1;
