@@ -71,9 +71,15 @@ template<typename T=int>void TestDefaultValue()
 	//cout << typeid(T2).name() << endl;
 }
 
+template<typename T> T func3()
+{
+	return T();
+}
 int main()
 {
-	TestDefaultValue<double>();
+	//TestDefaultValue<double>();
+	cout << func3<int>() << endl;
+	cout << int(3) << "\t" << double() << endl;
 	system("pause");
 	return 0;
 }
