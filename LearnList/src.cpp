@@ -2,10 +2,10 @@
 // compile with: /EHsc
 #include <list>
 #include <iostream>
+using namespace std;
 
-int main()
-{
-	using namespace std;
+int func1()
+{	
 	list <int> c1, c2;
 	list <int>::iterator Iter;
 
@@ -55,4 +55,19 @@ int main()
 	//cout << endl;
 	cin.get();
 	return 0;
+}
+
+void testBegin()
+{
+	list<int> ltest;
+	ltest.push_back(1);
+	cout << *ltest.begin() << endl;
+	ltest.push_back(2);
+	cout << *(ltest.begin()++++) << endl;
+}
+void main()
+{
+	testBegin();
+	system("pause");
+	return;
 }
