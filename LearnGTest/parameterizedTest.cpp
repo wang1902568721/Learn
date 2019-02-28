@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#define __PARAMTERIZED_TEST__
+//#define __PARAMTERIZED_TEST__
 
 #ifdef __PARAMTERIZED_TEST__
 // Returns true iff n is a prime number.
@@ -36,6 +36,6 @@ TEST_P(IsPrimeParamTest, HandleTrueReturn)
 	EXPECT_TRUE(IsPrime(n));
 }
 
-INSTANTIATE_TEST_CASE_P(TrueReturn,IsPrimeParamTest,testing::Values(3,5,11,23,17));
+INSTANTIATE_TEST_SUITE_P(TrueReturn,IsPrimeParamTest,testing::Values(3,5,11,23,17));
 
 #endif

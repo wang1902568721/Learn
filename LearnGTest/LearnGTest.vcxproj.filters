@@ -30,9 +30,18 @@
     <ClCompile Include="FormatMessage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AboutCall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ToBeTestedHead.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualHead.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MockClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
